@@ -1,0 +1,31 @@
+{
+  "name": "dockerpress",
+  "version": "1.0.0",
+  "description": "Local docker theme development",
+  "main": "index.js",
+  "bin": {
+    "dockerpress": "index.js"
+  },
+  "scripts": {
+    "build": "docker build -t test `pwd`/Dockerfile",
+    "run": "docker run -it -p 80:80 --name delete test",
+    "remove": "docker rm -f delete",
+    "buildrun": "docker build -t test . && docker run -it -p 80:80 --name delete test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://johnhhorton@bitbucket.org/symphoni/localdocker.git"
+  },
+  "author": "John Harrison Horton <harry@symphonyagency.com>",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/symphoni/localdocker#readme",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "dockerode": "^2.3.1",
+    "freeport": "^1.0.5",
+    "ip": "^1.1.5",
+    "is-windows": "^1.0.0",
+    "prompt": "^1.0.0",
+    "tar-fs": "^1.14.0"
+  }
+}
